@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+
+body{background-image: url("{{ url_for('static', filename='summer_stone.jpg') }}");
+background-repeat: no-repeat;
+background-attachment: fixed;  
+background-size: cover;
+background-position: center;}
+
+div {
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 150px;
+    font-weight: bold;
+    font-family: cursive;
+    color: rgb(152, 176, 184);
+    background-color: wheat;
+    margin:auto;
+    border: solid 10px;
+}
+
+.image{
+    display: inline-flex;
+    position: relative;
+    left: 25%;
+    width: 435px;
+    height: 435px;
+    border: 20px solid rgb(152, 176, 184);
+    border-radius: 50%;
+    padding: 10px;
+    background-color: wheat;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+
+
+}
+
+@keyframes example {
+    0%   {background-color: light;}
+    25%  {background-color: lightgrey;}
+    50%  {background-color: lightblue;}
+
+}
+
+legend {
+    display: block;
+    margin-right: 30%;
+    margin-left: 30%;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(152, 176, 184);
+    background-color: wheat;
+    border: solid 10px;
+}
+
+</style>
+
+<div>Summerstone</div>
+
+</head>
+<body>
+
+<legend>Photos</legend>
+<a href="http://127.0.0.1:5000/photos" target="_blank">
+    <img src="{{ url_for('static', filename='Ss.jpg') }}" class="image">
+</a>
+
+<legend>Information Page</legend>
+<a href="http://127.0.0.1:5000/info" target="_blank">
+    <img src="{{ url_for('static', filename='tree.jpg') }}" class="image">
+</a>
+
+<legend>Videos</legend>
+<a href="http://127.0.0.1:5000/videos" target="_blank">
+    <img src="{{ url_for('static', filename='Field.jpg') }}" class="image">
+</a>
+
+
+    
+
+
+</body>
+</html>
