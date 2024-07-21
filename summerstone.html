@@ -11,79 +11,152 @@ background-attachment: fixed;
 background-size: cover;
 background-position: center;}
 
-div {
+h3 {
     display: block;
-    position: relative;
+    position:relative;
     text-align: center;
     font-size: 150px;
     font-weight: bold;
     font-family: cursive;
-    color: rgb(152, 176, 184);
-    background-color: wheat;
-    margin:auto;
-    border: solid 10px;
+    color:rgb(140, 163, 178);
+    background-color: burlywood;
+    border: solid 5px rgb(140, 163, 178);
+    border-radius: 2px;
+    box-shadow: 0px 0px 20px 1px rgb(165, 165, 165);
+}
+
+h1 {
+    display: flex;
+    position:relative;
+    height: 3em;
+    width: 7em;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-family: cursive;
+    color: rgb(140, 163, 178);
+    background-color: burlywood;
+    border: solid 5px;
+    box-shadow: 0px 0px 20px 1px rgb(165, 165, 165);
+}
+
+p{
+    display: block;
+    position: relative;
+    height: 3em;
+    width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1px;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'poppins' sans-serif;
+    color: black;
+    background-color: lightgray;
+    border: solid 1px;
+    box-shadow: 0px 0px 20px 1px rgb(165, 165, 165);
 }
 
 .image{
     display: inline-flex;
-    position: relative;
+    position:sticky;
     left: 25%;
-    width: 435px;
-    height: 435px;
-    border: 20px solid rgb(152, 176, 184);
+    width: 450px;
+    height: 450px;
+    border: 5px solid rgb(140, 163, 178);
     border-radius: 50%;
+    box-shadow: 0px 0px 20px 1px rgb(165, 165, 165);
     padding: 10px;
-    background-color: wheat;
-    animation-name: example;
-    animation-duration: 3s;
+    background-color: burlywood;
+    animation-name: flashing_lights;
+    animation-duration: 2s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
 
-
 }
 
-@keyframes example {
-    0%   {background-color: light;}
-    25%  {background-color: lightgrey;}
-    50%  {background-color: lightblue;}
-
+.clips{
+    display: inline-flex;
+    position:relative;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    border: 5px solid rgb(140, 163, 178);
+    border-radius: 10%;
+    box-shadow: 0px 0px 20px 1px rgb(165, 165, 165);
+    padding: 1px;
+    background-color: lightblue;
+    
 }
 
-legend {
+
+/* .comment-box {
     display: block;
-    margin-right: 30%;
-    margin-left: 30%;
-    text-align: center;
-    font-size: 40px;
-    color: rgb(152, 176, 184);
-    background-color: wheat;
-    border: solid 10px;
+    position: relative;
+    border: 5px solid rgb(140, 163, 178);
+    font-family: 'poppins', sans-serif;
+    border-radius: 5px;
+    background-color: burlywood; 
+    margin: auto;
+    box-shadow: 0px 0px 20px 1px rgb(165, 165, 165);
+
+} */
+
+@keyframes flashing_lights {
+    0%   {background-color: lightblue;}
+    50%  {background-color: burlywood;}
+
 }
+
+
 
 </style>
 
-<div>Summerstone</div>
+<h3>Summerstone</h3>
+
 
 </head>
 <body>
 
-<legend>Photos</legend>
-<a href="http://127.0.0.1:5000/photos" target="_blank">
+<h1>Photos</h1>
+<p>Explore photos taken around the neighborhood.</p>
+<a href="http://192.168.4.28:5000/photos" target="_blank">
     <img src="{{ url_for('static', filename='Ss.jpg') }}" class="image">
 </a>
 
-<legend>Information Page</legend>
-<a href="http://127.0.0.1:5000/info" target="_blank">
+<h1>Information Page</h1>
+<p>Explore Community & Local Information by clicking on the image below.</p>
+<a href="http://192.168.4.28:5000/info" target="_blank">
     <img src="{{ url_for('static', filename='tree.jpg') }}" class="image">
 </a>
 
-<legend>Videos</legend>
-<a href="http://127.0.0.1:5000/videos" target="_blank">
-    <img src="{{ url_for('static', filename='Field.jpg') }}" class="image">
+<h1></legend>Videos</h1>
+<p>Explore videos captured around the neighborhood.</p>
+
+<a href="http://192.168.4.28:5000/videos" target="_blank">
+    <!-- <img src="{{ url_for('static', filename='Field.jpg') }}" class="image"> -->
+    <video autoplay muted loop class="clips">
+        <source src="/static/beach.mp4" type="video/mp4">
+    </video>
+    
 </a>
 
 
-    
+<!-- <div class="comment-box">
+    <p>Leave a Comment</p>
+    <form>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <input type="text" placeholder="Website">
+        <textarea rows="10" placeholder="Write Your Comment"></textarea>
+        <button type="submit">Post Comment</button>
+    </form>
+</div>     -->
+
 
 
 </body>
